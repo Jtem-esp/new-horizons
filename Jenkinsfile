@@ -9,6 +9,9 @@ pipeline {
 
 			steps {
 				checkout scm
+				dir("installer") {
+					bat "python publish.py"
+				}
 			}
 		}
 	}
