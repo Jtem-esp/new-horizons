@@ -1,11 +1,15 @@
 import os
 import shutil
 import fnmatch
+import dload
 
 if os.path.exists("publish"):
     shutil.rmtree("publish")
 
 os.makedirs("publish", exist_ok=True)
+
+# Download engine
+dload.save_unzip("https://github.com/PiratesAhoy/storm-engine/releases/download/pa15.0.0-beta.1/storm-engine.release.zip", "engine")
 
 def add_file(source_file, target_file=None):
     if target_file is None:
